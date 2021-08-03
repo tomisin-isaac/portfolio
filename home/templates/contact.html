@@ -1,0 +1,26 @@
+<div class="contact" id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 col-md-6 col-lg-6">
+                <div class="contact-map">
+                    <img src="{{questions.map.url}}" width="100%">
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-6 col-lg-6">
+                <div class="form">
+                    <form action="{% url 'index' %}" method="POST">
+                    {% csrf_token %}
+                        <input id="input" type="text" placeholder="Name" class="form-control rounded-0 border-top-0 border-right-0 border-left-0" name="name">
+                        <br>
+                        <br>
+                        <input id="input" type="email" placeholder="Email" class="form-control rounded-0 border-top-0 border-right-0 border-left-0" name="email">
+                        <br>
+                        <br>
+                        <textarea id="input" name="message" id="" cols="20" rows="3" placeholder="Messages" class="form-control rounded-0 border-top-0 border-right-0 border-left-0"></textarea>
+                        <button type="submit" class="btn1">Send</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

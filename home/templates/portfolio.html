@@ -1,0 +1,22 @@
+<div class="container portfolio" id="port" data-aos="slide-left">
+    <h6>PORTFOLIO</h6>
+    <h3>Our Exceptional Quality Work</h3>
+    <div class="container">
+        <div class="row">
+            {% if portfolio %}
+                {% for item in portfolio %}
+                    <div class="col-sm-12 col-md-4 col-sm-4">
+                        <div class="card2">
+                            <img src="{{item.image.url}}" width="100%">
+                            <div class="card-text">
+                                <h5>{{item.title}}</h5>
+                                <h4>{{item.title2}}</h4>
+                                <a href="{% url 'product_list' item.id item.slug %}" type="button" class="card_btn" title="View"><i class="fa fa-arrow-circle-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            {% endif %}
+        </div>
+    </div>
+</div>

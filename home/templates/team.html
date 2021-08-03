@@ -1,0 +1,71 @@
+<div class="outteam" data-aos="slide-up">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 col-md-6 col-lg-3">
+                <div class="teamstaff">
+                    <h6>TEAM & STAFF</h6>
+                    <h2>Our Team</h2>
+                    <p>
+                        A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country
+                    </p>
+                    <a href="#" type="button" class="btn">View all Staffs</a>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-12 col-lg-9">
+                <div class="row">
+                    {% if team %}
+                        {% for item in team %}
+                            <div class="col-sm-12 col-md-4 col-lg-4">
+                                <div class="card">
+                                    <img src="{{item.team_img.url}}" alt="">
+                                    <div class="content">
+                                        <h1 class="card-title">{{item.team_name}}</h1>
+                                        <h2>{{item.team_job}}</h2>
+                                        <div class="media2">
+                                        <a href="#"><i class="fa fa-facebook"></i></a>
+                                        <a href="#"><i class="fa fa-instagram"></i></a>
+                                        <a href="#"><i class="fa fa-twitter"></i></a>
+                                        <a href="#"><i class="fa fa-google-plus"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    {% endif %}
+                        
+                    
+                    <!-- <div class="col-sm-12 col-md-4 col-lg-4">
+                        <div class="card">
+                            <img src="images/me.jpg" alt="">
+                            <div class="content">
+                                <h1 class="card-title">Tomisin Isaac</h1>
+                                <h2>WEB DEVELOPER</h2>
+                                <div class="media2">
+                                <a href="#"><i class="fa fa-facebook"></i></a>
+                                <a href="#"><i class="fa fa-instagram"></i></a>
+                                <a href="#"><i class="fa fa-twitter"></i></a>
+                                <a href="#"><i class="fa fa-google-plus"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div> -->
+                    <!-- <div class="col-sm-12 col-md-4 col-lg-4">
+                        <div class="card">
+                            <img src="images/me.jpg" alt="">
+                            <div class="content">
+                                <h1 class="card-title">Tomisin Isaac</h1>
+                                <h2>WEB DEVELOPER</h2>
+                                <div class="media2">
+                                <a href="#"><i class="fa fa-facebook"></i></a>
+                                <a href="#"><i class="fa fa-instagram"></i></a>
+                                <a href="#"><i class="fa fa-twitter"></i></a>
+                                <a href="#"><i class="fa fa-google-plus"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

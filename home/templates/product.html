@@ -1,0 +1,153 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block header %}
+<div class="picture-overlay">
+    <header class="showcase">
+        <div class="container">
+            <div class="row head">
+                <div class="col-sm-12 col-md-6 col-lg-10">
+                    <p>phone no: <strong>{{setting.phone}}</strong> or email us: <strong>{{setting.email}}</strong></p>
+                </div>
+                <div class="col-sm-12 col-md-6 col-lg-2">
+                    <div class="media">
+                        <a href="#"><i class="fa fa-facebook"></i></a>
+                        <a href="#"><i class="fa fa-instagram"></i></a>
+                        <a href="#"><i class="fa fa-twitter"></i></a>
+                        <a href="#"><i class="fa fa-google-plus"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr class="rule">
+        <nav class="navbar navbar-toggleable-md navbar-inverse">
+            <div class="container">
+                <a class="navbar-brand" href="#">
+                    <img src="{{setting.logo.url}}" alt="" width="200px" height="150px">
+                </a>
+                <button class="navbar-toggler" data-toggle="collapse" data-target="#mainNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-end" id="mainNav">
+                    <div class="navbar-nav">
+                        <a class="nav-item nav-link" href="index.html">Home</a>
+                        <a class="nav-item nav-link" href="#about">About</a>
+                        <a class="nav-item nav-link" href="#services">Service</a>
+                        <a class="nav-item nav-link" href="#port">Portfolio</a>
+                        <a class="nav-item nav-link" href="#contact">Contact</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <hr class="rule2">
+        <div class="row text">
+            <div class="col-sm-12 col-md-6 col-lg-6">
+                <div class="blank"></div>
+            </div>
+            <div class="col-sm-12 col-md-6 col-lg-6">
+                <div class="headtext">
+                    <span>WELCOME TO VIRTUAL PRINT</span>
+                    <h1><a href="{% url 'index' %}">Home /</a> Portfolio</h1>
+                </div>
+            </div>
+        </div>
+    </header>
+</div>
+{% endblock header %}
+
+{% block portfolio %}
+    <!-- PORTFOLIO  -->
+    <div class="about" data-aos="fade-up">
+        <div class="container">
+            {% if product %}
+                {% for item in product %}
+                    <div class="row">
+                        <div class="col-sm-12 col-md-6 col-lg-6">
+                            <div class="portimage">
+                                <img src="{{item.image.url}}" width="100%">
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-md-6 col-lg-6">
+                            <div class="abouttext">
+                                <h4>{{item.keywords}}</h4>
+                                <h2>
+                                    {{item.description}}
+                                </h2>
+                                <p>
+                                    {{item.details}}
+                                </p>
+                            </div>
+                            <a href="contact.html" type="button" class="btn">Contact Us</a>
+                        </div>
+                    </div>
+                {% endfor %}
+            {% endif %}
+        </div>
+    </div>
+    
+
+
+      <!-- REVIEWS  -->
+    <div class="review" data-aos="fade-up">
+        <div class="container">
+            <div class="tab-pane" id="rev">
+                <h2>Review(s)</h2>
+                <div class="row">
+                    <div class="col-sm-12 col-md-3 col-lg-2">
+                        <div class="reviewimage">
+                            <img src="{{products.reviewimg.url}}" alt="">
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-md-6 col-lg-6">
+                        <div class="reviewtext">
+                            <h6>Ravi</h6>
+                            <p>July 23, 2019 | <span>Reply</span> </p>
+                            <i class="fa fa-star"></i>
+                                 <i class="fa fa-star"></i>
+                                 <i class="fa fa-star"></i>
+                                 <i class="fa fa-star"></i>
+                                 <i class="fa fa-star-o"></i>
+                            <p>
+                                ThisThis book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, <br>
+                                “Lorem ipsum dolor sit amet..
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <hr>
+                <br>
+                <div class="row">
+                    <div class="col-sm-12 col-md-3 col-lg-2">
+                        <div class="reviewimage">
+                            <img src="{{products.reviewimg2.url}}" alt="">
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-md-6 col-lg-6">
+                        <div class="reviewtext">
+                            <h6>Ravi</h6>
+                            <p>July 23, 2019 | <span>Reply</span> </p>
+                            <i class="fa fa-star"></i>
+                                 <i class="fa fa-star"></i>
+                                 <i class="fa fa-star"></i>
+                                 <i class="fa fa-star"></i>
+                                 <i class="fa fa-star-o"></i>
+                            <p>
+                                ThisThis book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, <br>
+                                “Lorem ipsum dolor sit amet..
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <div class="cartbuttonl">
+                    <button type="button" class="btn">Leave a review</button>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock portfolio %}
+
+    {% block questions %} {% include "questions.html" %} {% endblock questions %}
+
+     {% block footer %} {% include "footer.html" %} {% endblock footer %}
